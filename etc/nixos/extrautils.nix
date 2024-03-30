@@ -31,7 +31,14 @@
     pkgs.psmisc
     pkgs.quarto
     pkgs.racket
-    (pkgs.rstudioWrapper.override { packages = [ pkgs.rPackages.HistData ]; })
+    (pkgs.rstudioWrapper.override { 
+      packages = [
+        pkgs.rPackages.dplyr
+        pkgs.rPackages.ggplot2
+        pkgs.rPackages.HistData
+        pkgs.rPackages.lme4
+      ];
+    })
     pkgs.smartmontools
     pkgs.speechd
     pkgs.trash-cli
