@@ -20,7 +20,7 @@
                                :ott :ott
                                :pm :pollen
                                :sv :silver}
-                   :pattern {"/tmp/bash%-fc%.%w*" :bash}})
+                   :pattern {".*bash%-fc%.%w*" :bash}})
 
 ; interferes with ftdetect here if we don't set it only for reasonable extensions
 ; plugins are loaded after init.lua so we could set this anywhere
