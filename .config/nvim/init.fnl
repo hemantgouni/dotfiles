@@ -14,11 +14,12 @@
 
 ; replaces ftdetect
 ; there's a conflict with zipPlugin.vim using .ott
-(vim.filetype.add {:extension {:sv :silver
+(vim.filetype.add {:extension {:fml :flowcaml
+                               :lam :lambda
                                :mcr :macaroni
                                :ott :ott
                                :pm :pollen
-                               :lam :lambda}
+                               :sv :silver}
                    :pattern {"/tmp/bash%-fc%.%w*" :bash}})
 
 ; interferes with ftdetect here if we don't set it only for reasonable extensions
