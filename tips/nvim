@@ -37,3 +37,8 @@ A few tips:
 15. after running lsp rename, execute :wall to write changes
 
 16. :registers to see the contents of all registers
+
+17. :sb<bufnr> to create a horizontal split of an existing buffer
+
+18. prepend :vert to a split creation to create a vertical split instead of a
+    horizontal one
