@@ -5,8 +5,7 @@
     pkgs.age
     pkgs.bc
     pkgs.bind
-    pkgs.ffmpeg-full # ffmpeg-full has all features enabled; ffmpeg only has
-                     # the subset depended on in nixpkgs 
+    pkgs.ffmpeg-full # ffmpeg only has the features depended on in nixpkgs
     pkgs.gnome.gnome-calculator
     pkgs.gnupg
     pkgs.hyperfine
@@ -29,25 +28,13 @@
     pkgs.psmisc
     pkgs.quarto
     pkgs.racket
-    (pkgs.rstudioWrapper.override {
-      packages = [
-        pkgs.rPackages.dplyr
-        pkgs.rPackages.ggplot2
-        pkgs.rPackages.HistData
-        pkgs.rPackages.lme4
-        pkgs.rPackages.olsrr
-        pkgs.rPackages.purrr
-        pkgs.rPackages.rmarkdown
-        pkgs.rPackages.stringr
-        pkgs.rPackages.readr
-      ];
-    })
     pkgs.smartmontools
     pkgs.speechd
     pkgs.tree
     pkgs.unzip
     pkgs.usbutils
     pkgs.virt-manager
+    pkgs.watchexec
     pkgs.wget
     pkgs.xdg-utils
     pkgs.xorg.xlsclients
