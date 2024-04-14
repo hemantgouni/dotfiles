@@ -37,6 +37,7 @@
     ./rg.nix
     ./r.nix
     ./scripts.nix
+    ./sioyek.nix
     ./ssh.nix
     ./sway.nix
     ./texlive.nix
