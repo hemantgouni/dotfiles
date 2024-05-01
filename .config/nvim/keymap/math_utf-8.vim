@@ -55,9 +55,9 @@ rightarrow   →
 implies      ⇒
 =>           ⇒
 llbracket    ⟦
-[|
+[|           ⟦
 rrbracket    ⟧
-|]
+|]           ⟧
 subset       ⊂
 nsubset      ⊄
 superset     ⊃
