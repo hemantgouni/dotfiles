@@ -41,6 +41,9 @@
 
 (std.a.nvim-create-user-command :W (fn [] (vim.cmd.write)) {})
 
+; enable math input with M
+(std.a.nvim-create-user-command :M (fn [] (std.set-options {:keymap :math})) {})
+
 ; why does this work? this has remaps turned off
 ; for starting omnicomplete
 (std.set-key-maps :i {"<C-;>" :<C-x><C-o>} {:silent true})
