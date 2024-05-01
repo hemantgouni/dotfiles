@@ -55,7 +55,9 @@ rightarrow   →
 implies      ⇒
 =>           ⇒
 llbracket    ⟦
+[|
 rrbracket    ⟧
+|]
 subset       ⊂
 nsubset      ⊄
 superset     ⊃
@@ -74,6 +76,11 @@ exists       ∃
 nexists      ∄
 emptyset     ∅
 doteq        ≐
+bN           ℕ
+bZ           ℤ
+bQ           ℚ
+bR           ℝ
+bC           ℂ
 alpha        α
 beta         β
 eta          η
