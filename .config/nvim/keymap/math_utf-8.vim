@@ -14,7 +14,9 @@ _7           ₇
 _8           ₈
 _9           ₉
 vdash        ⊢
+|-           ⊢
 dashv        ⊣
+-|           ⊣
 nlt          ≮
 ngt          ≯
 le           ≤
@@ -29,6 +31,7 @@ sqcap        ⊓
 wedge        ∧
 vee          ∨
 equiv        ≡
+==           ≡
 nequiv       ≢
 triangleq    ≜
 sim          ∼
@@ -38,6 +41,7 @@ bot          ⊥
 in           ∈
 nin          ∉
 cong         ≅
+~=           ≅
 ncong        ≇
 minus        −
 times        ⨯
@@ -47,7 +51,9 @@ bob          ∻
 circ         ∘
 cdot         ∙
 rightarrow   →
+->           →
 implies      ⇒
+=>           ⇒
 llbracket    ⟦
 rrbracket    ⟧
 subset       ⊂
