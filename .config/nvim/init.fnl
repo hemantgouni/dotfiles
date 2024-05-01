@@ -22,10 +22,6 @@
                                :sv :silver}
                    :pattern {".*bash%-fc%.%w*" :bash}})
 
-; set digraphs to type unicode
-; use n_ga to see the decimal codepoint of a character
-(vim.cmd.digraph :tt 8866) ; ⊢
-
 ; interferes with ftdetect here if we don't set it only for reasonable extensions
 ; plugins are loaded after init.lua so we could set this anywhere
 (std.set-global-vars {:zipPlugin_ext "*.docx,*.dotx,*.epub,*.jar,*.odf,*.otf,*.pptx,*.xlsx,*.zip"})

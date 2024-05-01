@@ -42,3 +42,9 @@ A few tips:
 
 18. prepend :vert to a split creation to create a vertical split instead of a
     horizontal one
+
+19. Ctrl-] to follow links in helptext
+
+20. i_Ctrl-^ or c_Ctrl-^ (or i_Ctrl-6 or c_Ctrl-6) to toggle alternate keymap
+   a. works in search mode!
+   b. `set keymap=math` will enable math input
