@@ -13,6 +13,18 @@ _6           ₆
 _7           ₇
 _8           ₈
 _9           ₉
+_a           ₐ
+_e           ₑ
+_o           ₒ
+_x           ₓ
+_h           ₕ
+_k           ₖ
+_l           ₗ
+_m           ₘ
+_n           ₙ
+_p           ₚ
+_s           ₛ
+_t           ₜ
 vdash        ⊢
 |-           ⊢
 dashv        ⊣
@@ -76,6 +88,8 @@ exists       ∃
 nexists      ∄
 emptyset     ∅
 doteq        ≐
+ell          …
+...          …
 bN           ℕ
 bZ           ℤ
 bQ           ℚ
@@ -90,4 +104,6 @@ lambda       λ
 Lambda       Λ
 pi           π
 Pi           Π
+sigma        σ
+Sigma        Σ
 tau          τ
