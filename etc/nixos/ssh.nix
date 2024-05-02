@@ -17,6 +17,8 @@
     };
   };
 
+  # To automatically add keys to the agent on startup
+  # AddKeysToAgent only works after the first key use
   systemd.user.services.ssh-add = {
     Unit = {
       Description = "Add ssh keys from smartcard";
@@ -46,37 +48,11 @@
       "hambone" = {
         hostname = "128.237.79.4";
       };
+
       "hambone.initramfs" = {
         hostname = "128.237.79.4";
         user = "root";
         extraOptions.UserKnownHostsFile = "~/.ssh/known_hosts_initramfs";
-      };
-      "acm.argo" = {
-        hostname = "argo.acm.umn.edu";
-      };
-
-      "acm.cerberus" = {
-        hostname = "cerberus.acm.umn.edu";
-      };
-
-      "acm.garlic" = {
-        hostname = "garlic.acm.umn.edu";
-      };
-
-      "acm.jotunn" = {
-        hostname = "jotunn.acm.umn.edu";
-      };
-
-      "acm.wopr" = {
-        hostname = "160.94.179.147";
-      };
-
-      "acm.mh-chatserver" = {
-        hostname = "160.94.179.143";
-      };
-
-      "acm.vm" = {
-        hostname = "160.94.179.162";
       };
 
       "git.*" = {
@@ -85,18 +61,6 @@
 
       "git.github" = lib.hm.dag.entryAfter [ "git.*" ] {
         hostname = "github.com";
-      };
-
-      "git.github.work" = lib.hm.dag.entryAfter [ "git.*" ] {
-        hostname = "github.com";
-      };
-
-      "git.umn" = lib.hm.dag.entryAfter [ "git.*" ] {
-        hostname = "github.umn.edu";
-      };
-
-      "git.unipassau" = lib.hm.dag.entryAfter [ "git.*" ] {
-        hostname = "gitlab.infosun.fim.uni-passau.de";
       };
     };
   };
