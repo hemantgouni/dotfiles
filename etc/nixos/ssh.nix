@@ -17,7 +17,9 @@
     };
   };
 
-  # To automatically add keys to the agent on startup
+  # To automatically add smartcard key fingerprints to the agent on startup;
+  # needed for things like git signing to work, since that uses the agent
+  #
   # AddKeysToAgent only works after the first key use
   systemd.user.services.ssh-add = {
     Unit = {
