@@ -66,12 +66,18 @@
   services.kanshi = {
     enable = true;
 
-    profiles = {
-      laptop-tcs = {
-        outputs = [
+    settings = [
+      # Defines defaults for the output
+      # The output still needs to be mentioned in a profile for the defaults to apply
+      {
+        output.criteria = "Dell Inc. DELL P2723QE 7DQ1YV3";
+        output.scale = 2;
+      }
+      {
+        profile.name = "casper-tcs";
+        profile.outputs = [
           {
             criteria = "Dell Inc. DELL P2723QE 7DQ1YV3";
-            scale = 2.0;
             position = "0,0";
           }
           {
@@ -80,24 +86,25 @@
           }
         ];
         exec = "systemctl --user restart gammastep";
-      };
-      hambone = {
-        outputs = [
+      }
+      {
+        profile.name = "hambone";
+        profile.outputs = [
           {
             criteria = "Dell Inc. DELL P2723QE 7DQ1YV3";
-            scale = 2.0;
           }
         ];
-      };
-      default = {
-        outputs = [
+      }
+      {
+        profile.name = "default";
+        profile.outputs = [
           {
             criteria = "BOE 0x06DF Unknown";
             position = "0,0";
           }
         ];
-      };
-    };
+      }
+    ];
   };
 
   home.packages = with pkgs; [
