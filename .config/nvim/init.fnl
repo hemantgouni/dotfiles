@@ -10,7 +10,8 @@
 (set vim.env.EDITOR vim.env.VISUAL)
 
 ; suppress :healthcheck warning about perl provider
-(std.set-global-vars {:loaded_perl_provider 0})
+(std.set-global-vars {:loaded_perl_provider 0
+                      :loaded_ruby_provider 0})
 
 ; replaces ftdetect
 ; there's a conflict with zipPlugin.vim using .ott
