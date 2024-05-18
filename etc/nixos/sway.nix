@@ -4,6 +4,10 @@
   # helps firefox start in wayland mode
   home.sessionVariables.XDG_CURRENT_DESKTOP = "sway";
 
+  home.file.".XCompose".text = ''
+      include "%L" 
+  '';
+
   wayland.windowManager.sway = {
 
     enable = true;
@@ -29,6 +33,10 @@
           "${modifier}+Shift+p" = "exec grimshot copy area";
           "${modifier}+Shift+g" = "exec systemctl --user restart gammastep";
         };
+
+      input."type:keyboard".xkb_options = "ctrl:nocaps,compose:ralt";
+      
+      output."*".bg = "${./files/sway/wallpaper.png} fill";
     };
 
     # systemctl --user import-environment seems to be unneeded, since the
@@ -49,16 +57,9 @@
     #
     # don't import everything, systemd intentionally avoids doing this for
     # hermetic sealing purposes!
-    extraConfig =
-      ''
-        output * bg ${./files/sway/wallpaper.png} fill
-
-        default_border pixel 2
-
-        input "type:keyboard" {
-            xkb_options ctrl:nocaps
-        }
-      '';
+    extraConfig = ''
+      default_border pixel 2
+    '';
 
     wrapperFeatures.gtk = true;
   };
@@ -71,7 +72,7 @@
       # The output still needs to be mentioned in a profile for the defaults to apply
       {
         output.criteria = "Dell Inc. DELL P2723QE 7DQ1YV3";
-        output.scale = 2;
+        output.scale = 2.0;
       }
       {
         profile.name = "casper-tcs";
@@ -85,7 +86,8 @@
             position = "0,1080";
           }
         ];
-        exec = "systemctl --user restart gammastep";
+        # If multiple commands are provided, they are executed asynchronously
+        profile.exec = "systemctl --user restart gammastep";
       }
       {
         profile.name = "hambone";
