@@ -36,7 +36,6 @@
       pkgs.vimPlugins.parinfer-rust
       pkgs.vimPlugins.supertab
       pkgs.vimPlugins.undotree
-      pkgs.vimPlugins.vim-commentary
       pkgs.vimPlugins.vim-fugitive
     ];
 

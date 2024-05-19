@@ -234,8 +234,6 @@
 ; Mappings.
 ; See `:help vim.diagnostic.*` for documentation on any of the below functions
 (vim.keymap.set :n :<LocalLeader>e vim.diagnostic.open_float)
-(vim.keymap.set :n "[d" vim.diagnostic.goto_prev)
-(vim.keymap.set :n "]d" vim.diagnostic.goto_next)
 (vim.keymap.set :n :<LocalLeader>q vim.diagnostic.setloclist)
 
 (std.a.nvim-create-autocmd :LspAttach
@@ -245,7 +243,6 @@
                  (local opts {:buffer ev.buf})
                  (vim.keymap.set :n :gD vim.lsp.buf.declaration opts)
                  (vim.keymap.set :n :gd vim.lsp.buf.definition opts)
-                 (vim.keymap.set :n :K vim.lsp.buf.hover opts)
                  (vim.keymap.set :n :gi vim.lsp.buf.implementation opts)
                  (vim.keymap.set :n :gs vim.lsp.buf.signature_help opts)
                  (vim.keymap.set :n :<LocalLeader>wa vim.lsp.buf.add_workspace_folder opts)
