@@ -15,24 +15,16 @@
 
     plugins = [
       (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: [
-        plugins.bash
-        plugins.c
         plugins.css
         plugins.fennel
         plugins.gleam
         plugins.haskell
         plugins.html
         plugins.latex
-        plugins.lua
-        plugins.markdown
-        plugins.markdown_inline
         plugins.nix
         plugins.ocaml
-        plugins.python
         plugins.racket
         plugins.rust
-        plugins.vim
-        plugins.vimdoc
       ]))
       pkgs.vimPlugins.nvim-treesitter-textobjects
       pkgs.vimPlugins.conjure
