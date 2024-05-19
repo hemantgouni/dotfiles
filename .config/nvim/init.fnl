@@ -79,7 +79,7 @@
         contents (vim.split unsplit-string "\n")
         buf (std.a.nvim-create-buf false true)]
     (std.a.nvim-buf-set-lines buf 0 -1 true contents)
-    (std.open-centered-window buf 0.7 0.7 "Clipboard")
+    (std.open-centered-window buf 0.7 0.7 "Clipboard" 30)
     (std.set-key-maps :n {:<Esc> (fn [] (std.a.nvim-buf-delete buf {}))}
                          {:silent true :buffer buf})))
 

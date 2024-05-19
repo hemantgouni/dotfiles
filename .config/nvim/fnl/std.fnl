@@ -53,7 +53,7 @@
 (fn set-localleader-maps [maps]
   (set-prefix-maps :<LocalLeader> :n maps {:silent true :buffer 0}))
 
-(fn open-centered-window [buf prop-width prop-height title]
+(fn open-centered-window [buf prop-width prop-height title transp]
   (let [gui (. (a.nvim-list-uis) 1)]
     (a.nvim-open-win buf true
       {:title title
@@ -66,7 +66,8 @@
                            0.5))
        :height (math.floor (* (. gui :height) prop-height))
        :width (math.floor (* (. gui :width) prop-width))
-       :border :rounded})))
+       :border :rounded})
+    (set-local-options {:winblend transp})))
 
 ; do a nil check just in case, since nil should generally be treated as an empty string
 (fn str-is-empty [str]
