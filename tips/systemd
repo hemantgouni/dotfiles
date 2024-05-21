@@ -1,0 +1,5 @@
+- `systemctl cat <some>.service`
+- `systemctl show-environment`
+- `systemctl daemon-reload` (when changing service definitions)
+
+Can add `--user` to all of these.

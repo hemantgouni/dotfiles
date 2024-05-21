@@ -52,11 +52,11 @@
     },
     "nixpkgs-firefox": {
       "locked": {
-        "lastModified": 1716041078,
-        "narHash": "sha256-ewjE7eVBVmjh8faip3RW+I3WzQZ3iywQVyxZfjunfH0=",
+        "lastModified": 1716170507,
+        "narHash": "sha256-EAJWIo2uRoELjlI9+RAL/9QF4D+SSHqYLyMW4QTZLP0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "04496f014fcf27fdcede464d5de8558e12b5710c",
+        "rev": "f72f67152a44df2d2c09a578bac8e09b9390279b",
         "type": "github"
       },
       "original": {

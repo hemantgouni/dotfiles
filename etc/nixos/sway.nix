@@ -69,17 +69,23 @@
 
     settings = [
       # Defines defaults for the output
+      #
       # The output still needs to be mentioned in a profile for the defaults to apply
-      {
-        output.criteria = "Dell Inc. DELL P2723QE 7DQ1YV3";
-        output.scale = 2.0;
-      }
+      #
+      # Uncomment this and clean up the redundant `scale` directives whenever
+      # the next version of Kanshi releases:
+      #
+      # {
+      #   output.criteria = "Dell Inc. DELL P2723QE 7DQ1YV3";
+      #   output.scale = 2.0;
+      # }
       {
         profile.name = "casper-tcs";
         profile.outputs = [
           {
             criteria = "Dell Inc. DELL P2723QE 7DQ1YV3";
             position = "0,0";
+            scale = 2.0;
           }
           {
             criteria = "BOE 0x06DF Unknown";
@@ -94,6 +100,7 @@
         profile.outputs = [
           {
             criteria = "Dell Inc. DELL P2723QE 7DQ1YV3";
+            scale = 2.0;
           }
         ];
       }
