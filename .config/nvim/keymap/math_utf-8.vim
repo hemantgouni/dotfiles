@@ -64,6 +64,8 @@ loadkeymap
 ;times          ⨯
 ;oplus          ⊕
 ;otimes         ⊗
+;doubleplus     ⧺
+;++             ⧺
 ;bob            ∻
 ;circ           ∘
 ;bullet         ∙
@@ -81,6 +83,10 @@ loadkeymap
 ;<=             ⇐
 ;Leftrightarrow ⇔
 ;<=>            ⇔
+;mapsto         ↦
+;|->            ↦
+;mapsfrom       ↤
+;<-|            ↤
 ;llbracket      ⟦
 ;[|             ⟦
 ;rrbracket      ⟧
@@ -125,4 +131,7 @@ loadkeymap
 ;Phi            Φ
 ;sigma          σ
 ;Sigma          Σ
+;omega          ω
+;Omega          Ω
 ;tau            τ
+;ell            ℓ
