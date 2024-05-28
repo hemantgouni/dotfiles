@@ -26,13 +26,13 @@
         plugins.racket
         plugins.rust
       ]))
-      pkgs.vimPlugins.nvim-treesitter-textobjects
       pkgs.vimPlugins.conjure
       pkgs.vimPlugins.Coqtail
       pkgs.vimPlugins.fzf-vim
-      pkgs.vimPlugins.gruvbox-nvim
+      pkgs.my-gruvbox-nvim
       pkgs.vimPlugins.lean-nvim
       pkgs.vimPlugins.nvim-lspconfig
+      pkgs.vimPlugins.nvim-treesitter-textobjects
       pkgs.vimPlugins.parinfer-rust
       pkgs.vimPlugins.supertab
       pkgs.vimPlugins.undotree
@@ -50,8 +50,8 @@
   };
 
   home.packages = [
-    pkgs.myFennel
+    pkgs.my-fennel
     pkgs.fnlfmt
-    pkgs.myAntifennel
+    pkgs.my-antifennel
   ];
 }

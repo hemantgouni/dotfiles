@@ -11,6 +11,7 @@ let
       # will get an error otherwise
       dontUnpack = true;
       nativeBuildInputs = [
+        # pkgs.my-fennel just adds readline support, so no need to use it here
         pkgs.fennel
       ];
       buildInputs = [

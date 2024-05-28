@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-firefox.url = "github:nixos/nixpkgs/nixos-unstable-small";
+    nixos-unstable-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
     home-manager.url = "github:nix-community/home-manager";
     antifennel = {
       url = "git+https://git.sr.ht/~technomancy/antifennel";
@@ -11,7 +11,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-firefox, home-manager, antifennel, ... }:
+  outputs = { self, nixpkgs, nixos-unstable-small, home-manager, antifennel, ... }:
     let
       mkNixosConfig = machineSpecificArgs: nixpkgs.lib.nixosSystem {
         # equivalent to `system = machineSpecificArgs.system;`
@@ -53,7 +53,7 @@
           (_: {
             nixpkgs.overlays = [
               (_: prev: {
-                myAntifennel = prev.stdenv.mkDerivation {
+                my-antifennel = prev.stdenv.mkDerivation {
                   name = "antifennel";
                   src = antifennel;
                   buildInputs = [ prev.luajit ];
@@ -65,13 +65,17 @@
                 };
               })
               (_: prev: {
-                myFennel = prev.luajitPackages.fennel.overrideAttrs (_: {
+                my-fennel = prev.luajitPackages.fennel.overrideAttrs (_: {
                   nativeBuildInputs = prev.luajitPackages.fennel.nativeBuildInputs ++ [
                     prev.luajitPackages.readline
                   ];
                 });
               })
-              (_: prev: { firefox = nixpkgs-firefox.legacyPackages.${prev.system}.firefox; })
+              (_: prev: { firefox = nixos-unstable-small.legacyPackages.${prev.system}.firefox; })
+              (_: prev: {
+                my-gruvbox-nvim =
+                  nixos-unstable-small.legacyPackages.${prev.system}.vimPlugins.gruvbox-nvim;
+              })
               # Do we really need to wrap prev.system in ${}?
               #
               # ===========
