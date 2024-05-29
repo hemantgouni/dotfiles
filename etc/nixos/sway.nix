@@ -32,6 +32,10 @@
           "${modifier}+Shift+b" = "exec brightnessctl set +1%";
           "${modifier}+Shift+p" = "exec grimshot copy area";
           "${modifier}+Shift+g" = "exec systemctl --user restart gammastep";
+          "${modifier}+Ctrl+k" = "move workspace output up";
+          "${modifier}+Ctrl+j" = "move workspace output down";
+          "${modifier}+Ctrl+h" = "move workspace output left";
+          "${modifier}+Ctrl+l" = "move workspace output right";
         };
 
       input."type:keyboard".xkb_options = "ctrl:nocaps,compose:ralt";
