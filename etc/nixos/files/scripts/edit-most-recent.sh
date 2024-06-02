@@ -1,15 +1,18 @@
 list_recent_files () {
     # list all files with their mtimes, excluding hidden directories and files
     #
-    # using Unicode 0x1F here, as a delimiter, from
+    # using Unicode 0x1F as a delimiter here, from
     # https://en.wikipedia.org/wiki/C0_and_C1_control_codes#Field_separators
     find . -not -type d -not -path "*/.*" -printf "%T@␟%p\0" | \
-        # Sort by the first field, starting (and ending) at the first field
-        sort --zero-terminated --numeric-sort --key=1,1 --reverse | \
-        # Set input and output record and field separators to nul and unicode
-        # unit separator characters, respectively. Print the column of
-        # filenames.
-        awk 'BEGIN { RS="\0"; FS="␟"; ORS="\0"; OFS="␟" }; { print $2 }'
+        # Since the time appears first, we needn't sort by a particular field
+        sort --zero-terminated --numeric-sort --reverse | \
+        # Set input record and field separators to nul and unicode unit
+        # separator characters, respectively. Use null terminators for
+        # lines in output. Print the column of filenames.
+        #
+        # awk can handle separate record/field separators, and multi-byte
+        # separators. cut can't.
+        awk 'BEGIN { RS="\0"; FS="␟"; ORS="\0" }; { print $2 }'
 }
 
 command_name=$(basename "$0")
