@@ -43,5 +43,11 @@ in
     (pkgs.writeShellScriptBin
       "nvim-remote"
       (builtins.readFile ./files/scripts/nvim-remote.sh))
+    (pkgs.writeShellScriptBin
+      "er"
+      (builtins.readFile ./files/scripts/edit-most-recent.sh))
+    (pkgs.writeShellScriptBin
+      "erl"
+      (builtins.readFile ./files/scripts/edit-most-recent.sh))
   ];
 }

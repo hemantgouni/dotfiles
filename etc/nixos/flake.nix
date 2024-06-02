@@ -72,10 +72,6 @@
                 });
               })
               (_: prev: { firefox = nixos-unstable-small.legacyPackages.${prev.system}.firefox; })
-              (_: prev: {
-                my-gruvbox-nvim =
-                  nixos-unstable-small.legacyPackages.${prev.system}.vimPlugins.gruvbox-nvim;
-              })
               # Do we really need to wrap prev.system in ${}?
               #
               # ===========

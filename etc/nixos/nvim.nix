@@ -29,7 +29,7 @@
       pkgs.vimPlugins.conjure
       pkgs.vimPlugins.Coqtail
       pkgs.vimPlugins.fzf-vim
-      pkgs.my-gruvbox-nvim
+      pkgs.vimPlugins.gruvbox-nvim
       pkgs.vimPlugins.lean-nvim
       pkgs.vimPlugins.nvim-lspconfig
       pkgs.vimPlugins.nvim-treesitter-textobjects
