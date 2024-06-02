@@ -23,13 +23,16 @@ if [ "$command_name" = "er" ]; then
     "$VISUAL" "$(list_recent_files | head --zero-terminated --lines=1 | tr -d '\000')"
 elif [ "$command_name" = "erl" ]; then
     # translate all null terminators to newlines to send to vim
-    list_recent_files | head --zero-terminated --lines=10 | tr '\000' '\n' | \
+    list_recent_files | head --zero-terminated --lines=10 | \
+        # $0 is the entire line, $1 is the first field, $2 is the second field, ...
+        awk 'BEGIN { RS="\0"; ORS="\n\n" }; { print NR "\t" $0 }' | \
         # noswapfile is an excmd that executes another command that possibly
         # creates a buffer and does not create a swapfile for that buffer
         nvim +noswapfile \
              +"setlocal buftype=nofile" \
              +"setlocal bufhidden=hide" \
-             +"setlocal nobuflisted"
+             +"setlocal nobuflisted" \
+             +"normal! ll"
 else
     printf '%s\n' "Called with invalid command name $command_name (not 'er' or 'erl'). Exiting."
 fi
