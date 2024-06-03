@@ -20,12 +20,12 @@ command_name=$(basename "$0")
 if [ "$command_name" = "er" ]; then
     # extract the first (most recent) file; \000 specified for tr because the
     # manpage says it accepts \NNN octal values but doesn't necessarily handle \0
-    "$VISUAL" "$(list_recent_files | head --zero-terminated --lines=1 | tr -d '\000')"
+    nvim "$(list_recent_files | head --zero-terminated --lines=1 | tr -d '\000')"
 elif [ "$command_name" = "erl" ]; then
     # translate all null terminators to newlines to send to vim
     list_recent_files | head --zero-terminated --lines=10 | \
         # $0 is the entire line, $1 is the first field, $2 is the second field, ...
-        awk 'BEGIN { RS="\0"; ORS="\n\n" }; { print NR "\t" $0 }' | \
+        awk 'BEGIN { RS="\0"; ORS="\n\n" }; { if (NR == 10) { ORS="\n" }; { print NR "\t" $0 } }' | \
         # noswapfile is an excmd that executes another command that possibly
         # creates a buffer and does not create a swapfile for that buffer
         nvim +noswapfile \
