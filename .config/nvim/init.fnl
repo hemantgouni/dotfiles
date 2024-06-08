@@ -6,7 +6,7 @@
 (local lean (require :lean))
 
 ; forward editor usages to the running nvim instance
-(set vim.env.VISUAL :nvim-remote)
+(set vim.env.VISUAL :ei)
 (set vim.env.EDITOR vim.env.VISUAL)
 
 ; suppress :healthcheck warning about perl provider
