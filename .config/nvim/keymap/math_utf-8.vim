@@ -135,3 +135,4 @@ loadkeymap
 ;Omega          Ω
 ;tau            τ
 ;ell            ℓ
+;hat            <char-770>

@@ -41,7 +41,7 @@ in
       "danger-anti-sync-dots"
       (builtins.readFile ./files/scripts/danger-anti-sync-dots.sh))
     (pkgs.writeShellScriptBin
-      "nvim-remote"
+      "ei"
       (builtins.readFile ./files/scripts/nvim-remote.sh))
     (pkgs.writeShellScriptBin
       "er"
