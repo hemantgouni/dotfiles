@@ -35,7 +35,7 @@
     ./nvim.nix
     ./readline.nix
     ./rg.nix
-    ./r.nix
+    # ./r.nix
     ./scripts.nix
     ./sioyek.nix
     ./ssh.nix
