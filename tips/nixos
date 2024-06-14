@@ -48,3 +48,12 @@ Same for home-configuration.nix
 If something isn't working, try updating the flake it's installed from first!
 
 ----
+
+To collect garbage, deleting old generations:
+
+```nix
+sudo nix-collect-garbage -d
+```
+
+Try rebooting to the latest generation first if this doesn't free up enough
+storage (in case you've updated but not rebooted since).
