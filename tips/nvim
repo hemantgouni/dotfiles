@@ -48,3 +48,7 @@ A few tips:
 20. i_Ctrl-^ or c_Ctrl-^ (or i_Ctrl-6 or c_Ctrl-6) to toggle alternate keymap
    a. works in search mode!
    b. `set keymap=math` will enable math input
+
+21. If nvim is updated and starts showing weird tree-sitter errors then try
+    installing more parsers, particularly for the filetype you're getting
+    errors on.
