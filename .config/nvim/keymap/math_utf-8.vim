@@ -99,6 +99,7 @@ loadkeymap
 ;==             ≡
 ;nequiv         ≢
 ;triangleq      ≜
+;doteq          ≐
 ;sim            ∼
 ;nsim           ≁
 ;top            ⊤
@@ -236,3 +237,5 @@ loadkeymap
 ;tau            τ
 ;ell            ℓ
 ;hat            <char-770>
+;gg             ≫
+;ll             ≪
