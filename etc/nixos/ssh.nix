@@ -11,7 +11,7 @@
       # %t is $XDG_RUNTIME_DIR (/run by default)
       Environment = [
         "SSH_AUTH_SOCK=%t/ssh-agent.socket"
-        "SSH_ASKPASS=${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass"
+        "SSH_ASKPASS=${pkgs.seahorse}/libexec/seahorse/ssh-askpass"
       ];
       ExecStart = "${pkgs.openssh}/bin/ssh-agent -D -a $SSH_AUTH_SOCK";
     };
@@ -38,7 +38,7 @@
   };
 
   home.sessionVariables = {
-    SSH_ASKPASS = "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
+    SSH_ASKPASS = "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
     SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/ssh-agent.socket";
   };
 

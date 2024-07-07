@@ -1,3 +1,3 @@
 { pkgs, ... }:
 
-{ home.packages = [ pkgs.gnome.adwaita-icon-theme ]; }
+{ home.packages = [ pkgs.adwaita-icon-theme ]; }

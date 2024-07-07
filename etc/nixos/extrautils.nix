@@ -6,7 +6,7 @@
     pkgs.bc
     pkgs.bind
     pkgs.ffmpeg-full # ffmpeg only has the features depended on in nixpkgs
-    pkgs.gnome.gnome-calculator
+    pkgs.gnome-calculator
     pkgs.gnupg
     pkgs.hyperfine
     pkgs.imagemagick
