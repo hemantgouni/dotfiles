@@ -126,7 +126,7 @@
   # allows for smartcard functionality
   services.pcscd.enable = true;
 
-  security.pam.u2f.authFile = ./files/system/exclude/u2f_keys;
+  security.pam.u2f.settings.authFile = ./files/system/exclude/u2f_keys;
   security.pam.services = {
     login.u2fAuth = true;
     sudo.u2fAuth = true;
