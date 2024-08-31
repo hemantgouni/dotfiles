@@ -1,7 +1,7 @@
-{ config, lib, pkgs, ... }:
+{ config, osConfig, lib, pkgs, ... }:
 
 {
-  systemd.user.services.ssh-agent = {
+  systemd.user.services.ssh-agent = lib.mkIf (! osConfig.machineSpecific.server) {
     Unit = {
       Description = "SSH Agent";
     };
@@ -24,7 +24,7 @@
   #
   # AddKeysToAgent only works after the first key use; it requires agentless
   # authentication the first time
-  systemd.user.services.ssh-add = {
+  systemd.user.services.ssh-add = lib.mkIf (! osConfig.machineSpecific.server) {
     Unit = {
       Description = "Add ssh keys from smartcard";
       After = "ssh-agent.service";
@@ -40,7 +40,7 @@
     };
   };
 
-  home.sessionVariables = {
+  home.sessionVariables = lib.mkIf (! osConfig.machineSpecific.server) {
     SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/ssh-agent.socket";
     SSH_ASKPASS = "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
   };

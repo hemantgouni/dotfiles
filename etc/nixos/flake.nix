@@ -91,8 +91,7 @@
             ];
           })
           ./configuration.nix
-          home-manager.nixosModules.home-manager
-          {
+          home-manager.nixosModules.home-manager {
             # ===========
             # Use the system nixpkgs, not home-manager's own
             # This causes it to use our overlays
