@@ -5,18 +5,24 @@ if [ "$EUID" -eq 0 ]; then
     exit 1
 fi
 
-printf 'Replacing /etc/nixos\n'
+read -rp 'THIS WILL OVERWRITE YOUR CURRENT CONFIGURATION. PROCEED? [YES] '
 
-sudo rsync --info=NAME --archive --delete \
-      --exclude 'exclude' \
-      --exclude 'hardware-configuration.nix' \
-      "$HOME/.files/etc/nixos/" '/etc/nixos'
+if [ "$REPLY" == "YES" ]; then
+    printf 'Replacing /etc/nixos\n'
 
-sudo chown -R root:root '/etc/nixos'
+    sudo rsync --info=NAME --archive --delete \
+          --exclude 'exclude' \
+          --exclude 'hardware-configuration.nix' \
+          "$HOME/.files/etc/nixos/" '/etc/nixos'
 
-printf 'Replacing %s/.config/nvim\n' "$HOME"
+    sudo chown -R root:root '/etc/nixos'
 
-sudo rsync --info=NAME --archive --delete \
-      "$HOME/.files/.config/nvim/" "$HOME/.config/nvim"
+    printf 'Replacing %s/.config/nvim\n' "$HOME"
 
-compile-nvim-conf
+    sudo rsync --info=NAME --archive --delete \
+          "$HOME/.files/.config/nvim/" "$HOME/.config/nvim"
+
+    compile-nvim-conf
+else
+    exit 1
+fi
