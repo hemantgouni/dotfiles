@@ -14,13 +14,16 @@
         "SSH_ASKPASS=${pkgs.seahorse}/libexec/seahorse/ssh-askpass"
       ];
       ExecStart = "${pkgs.openssh}/bin/ssh-agent -D -a $SSH_AUTH_SOCK";
+      # wait for the agent to be spun up
+      ExecStartPost = "${pkgs.coreutils-full}/bin/sleep 1";
     };
   };
 
   # To automatically add smartcard key fingerprints to the agent on startup;
   # needed for things like git signing to work, since that uses the agent
   #
-  # AddKeysToAgent only works after the first key use
+  # AddKeysToAgent only works after the first key use; it requires agentless
+  # authentication the first time
   systemd.user.services.ssh-add = {
     Unit = {
       Description = "Add ssh keys from smartcard";
@@ -38,8 +41,8 @@
   };
 
   home.sessionVariables = {
-    SSH_ASKPASS = "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
     SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/ssh-agent.socket";
+    SSH_ASKPASS = "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
   };
 
   programs.ssh = {

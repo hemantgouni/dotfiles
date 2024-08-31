@@ -12,6 +12,8 @@
 
     enable = true;
 
+    package = null;
+
     config = {
 
       modifier = "Mod4";
@@ -41,6 +43,10 @@
       input."type:keyboard".xkb_options = "ctrl:nocaps,compose:ralt";
       
       output."*".bg = "${./files/sway/wallpaper.png} fill";
+      
+      window.titlebar = false;
+
+      floating.titlebar = false;
     };
 
     # systemctl --user import-environment seems to be unneeded, since the
@@ -61,11 +67,6 @@
     #
     # don't import everything, systemd intentionally avoids doing this for
     # hermetic sealing purposes!
-    extraConfig = ''
-      default_border pixel 2
-    '';
-
-    wrapperFeatures.gtk = true;
   };
 
   services.kanshi = {

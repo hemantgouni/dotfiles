@@ -123,17 +123,24 @@
     };
   };
 
-  # allows for smartcard functionality
+  # needed for ykman to work
   services.pcscd.enable = true;
 
-  security.pam.u2f.settings.authFile = ./files/system/exclude/u2f_keys;
+  security.pam.u2f.settings.authfile = ./files/system/exclude/u2f_keys;
   security.pam.services = {
+    # from list of services in /etc/pam.d
     login.u2fAuth = true;
     sudo.u2fAuth = true;
+    swaylock.u2fAuth = true;
   };
 
-  services.atd.enable = true;
+  # figure out why font renders weird (in foot? and bar?) if we disable this
+  # and switch to HM's version fully
+  # this also takes care of xdg portal setup for us
   programs.sway.enable = true;
+  programs.sway.wrapperFeatures.gtk = true;
+
+  services.atd.enable = true;
   programs.nix-ld.enable = true;
 
   fonts.packages = [ pkgs.cm_unicode pkgs.bakoma_ttf pkgs.noto-fonts ];
