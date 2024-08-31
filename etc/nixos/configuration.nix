@@ -44,10 +44,6 @@
     };
   };
 
-  # prevent processes running as the same user from reading each others'
-  # memory
-  boot.kernel.sysctl."kernel.yama.ptrace_scope" = 1;
-
   # Set your time zone.
   time.timeZone = "Etc/GMT";
 
