@@ -99,9 +99,12 @@
   # enable wayland screen snooping
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
+    wlr.enable = true; # for screen sharing? configures & provides the package
     extraPortals = [
+      # since -wlr doesn't implement eg file choosers
+      # no enable option for this one, it stands alone w/o config
       pkgs.xdg-desktop-portal-gtk
+
     ];
   };
 
