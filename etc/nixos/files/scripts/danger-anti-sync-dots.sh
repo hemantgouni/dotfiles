@@ -1,3 +1,10 @@
+if [ "$EUID" -eq 0 ]; then
+    printf '%s\n%s\n' \
+        'Running as root-- this is not what you want (dotfiles for root will be replaced).' \
+        'Wait for me to prompt you for sudo.'
+    exit 1
+fi
+
 printf 'Replacing /etc/nixos\n'
 
 sudo rsync --info=NAME --archive --delete \
