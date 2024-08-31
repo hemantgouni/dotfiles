@@ -49,5 +49,11 @@ in
     (pkgs.writeShellScriptBin
       "erl"
       (builtins.readFile ./files/scripts/edit-most-recent.sh))
+    (pkgs.writeShellScriptBin
+      "ec"
+      (builtins.readFile ./files/scripts/nvimc.sh))
+    (pkgs.writeShellScriptBin
+      "ed"
+      (builtins.readFile ./files/scripts/nvimd.sh))
   ];
 }
