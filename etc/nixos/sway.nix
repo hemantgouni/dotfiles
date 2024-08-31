@@ -12,6 +12,7 @@
 
     enable = true;
 
+    # since we're using the nixos module. see docs for this option
     package = null;
 
     config = {
@@ -45,8 +46,6 @@
       output."*".bg = "${./files/sway/wallpaper.png} fill";
       
       window.titlebar = false;
-
-      floating.titlebar = false;
     };
 
     # systemctl --user import-environment seems to be unneeded, since the
