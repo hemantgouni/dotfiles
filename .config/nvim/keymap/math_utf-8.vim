@@ -95,6 +95,7 @@ loadkeymap
 ;sqcap          ⊓
 ;wedge          ∧
 ;vee            ∨
+;neg            ¬
 ;equiv          ≡
 ;==             ≡
 ;nequiv         ≢
