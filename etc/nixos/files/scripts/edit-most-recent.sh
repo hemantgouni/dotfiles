@@ -34,9 +34,7 @@ elif [ "$command_name" = "erl" ]; then
     list_recent_files "${find_args[@]}" | head --zero-terminated --lines=10 | \
         # $0 is the entire line, $1 is the first field, $2 is the second field, ...
         awk 'BEGIN { RS="\0"; ORS="\n\n" }; { print NR "\t" $0 }' | head --bytes=-1 | \
-        # noswapfile is an excmd that executes another command that possibly
-        # creates a buffer and does not create a swapfile for that buffer
-        nvim +noswapfile \
+        nvim +"setlocal noswapfile" \
              +"setlocal buftype=nofile" \
              +"setlocal bufhidden=hide" \
              +"setlocal nobuflisted" \
