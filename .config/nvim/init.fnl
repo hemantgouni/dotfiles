@@ -67,7 +67,7 @@
 
 (std.set-leader-maps {:q enter-forgetful-mode})
 
-(fn get-clipboard []
+(fn show-clipboard []
   (let [primary (vim.fn.getreg "*")
         clipboard (vim.fn.getreg "+")
         unsplit-string
@@ -88,7 +88,7 @@
   (vim.fn.setreg "+" "")
   (print "PRIMARY and CLIPBOARD cleared."))
 
-(std.set-leader-maps {:w get-clipboard :e clear-clipboard})
+(std.set-leader-maps {:w show-clipboard :e clear-clipboard})
 
 ; this will still remove buffers if it will close a tab other than
 ; one we are currently on. maybe it shouldn't
