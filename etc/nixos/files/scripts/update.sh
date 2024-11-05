@@ -61,9 +61,9 @@ done
 shift "$((OPTIND - 1))"
 
 if test "$update" = 'firefox'; then
-    sudo nix flake lock --update-input nixpkgs-firefox /etc/nixos
+    sudo nix flake update nixpkgs-firefox --flake /etc/nixos
 else
-    sudo nix flake update /etc/nixos
+    sudo nix flake update --flake /etc/nixos
 fi
 
 nixos-rebuild dry-build

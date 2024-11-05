@@ -129,5 +129,6 @@
     swayidle
     swaylock
     wl-clipboard
+    wl-mirror
   ];
 }

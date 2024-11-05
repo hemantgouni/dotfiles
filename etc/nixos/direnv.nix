@@ -1,5 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  programs.direnv.enable = true;
+  programs.direnv = {
+    enable = true;
+    config = {
+      hide_env_diff = true;
+    };
+  };
 }
