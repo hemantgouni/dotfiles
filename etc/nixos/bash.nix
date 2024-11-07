@@ -28,7 +28,7 @@
       red = ''\e[1;31m'';
       green = ''\e[1;32m'';
       clear = ''\e[m'';
-      improperExit = ''$(if [ "$?" -eq 0 ]; then printf "%s" "${green}"; else printf "%s" "${red}"; fi)'';
+      improperExit = ''$(if [ "$?" -eq 0 ]; then printf "${green}"; else printf "${red}"; fi)'';
       ssh = ''$([ -n "$SSH_TTY" ] && printf "%s " "\h")'';
       jobs = ''$([ "\j" -gt 0 ] && printf "%s " "\j")'';
       workdir = ''\w'';

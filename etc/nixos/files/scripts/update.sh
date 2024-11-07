@@ -1,6 +1,5 @@
 set -euo pipefail
 
-update='default'
 action='noop'
 method='boot'
 host='none'
@@ -20,7 +19,7 @@ set_action () {
     fi
 }
 
-while getopts 'hprsie:f' opt
+while getopts 'hprsie:' opt
 do
     case "$opt" in
         '?' | 'h')
@@ -51,20 +50,13 @@ do
         'e')
             host="$OPTARG"
             ;;
-        'f')
-            update='firefox'
-            ;;
     esac
 done
 
 # removes all parsed options
 shift "$((OPTIND - 1))"
 
-if test "$update" = 'firefox'; then
-    sudo nix flake update nixpkgs-firefox --flake /etc/nixos
-else
-    sudo nix flake update --flake /etc/nixos
-fi
+sudo nix flake update /etc/nixos
 
 nixos-rebuild dry-build
 
