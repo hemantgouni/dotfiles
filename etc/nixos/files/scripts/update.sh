@@ -56,7 +56,7 @@ done
 # removes all parsed options
 shift "$((OPTIND - 1))"
 
-sudo nix flake update /etc/nixos
+sudo nix flake update --flake /etc/nixos
 
 nixos-rebuild dry-build
 
