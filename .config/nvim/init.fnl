@@ -105,12 +105,12 @@
     ; since :h :bwipeout might be dangerous somehow, :bunload instead
     (std.a.nvim-buf-delete current-buffer-identifier {:force true :unload true})))
 
-(std.set-leader-maps {:sh vim.cmd.tabclose
-                      :sl (fn [] (vim.cmd "tab split"))
-                      :sx del-buf-keep-tab
-                      "s;" (fn [] (vim.cmd.tabnew) (vim.cmd.terminal))
-                      :dh (fn [] (vim.cmd "silent! tabmove -1"))
-                      :dl (fn [] (vim.cmd "silent! tabmove +1"))
+(std.set-leader-maps {:dh vim.cmd.tabclose
+                      :dl (fn [] (vim.cmd "tab split"))
+                      :dj (fn [] (vim.cmd "silent! tabmove -1"))
+                      :dk (fn [] (vim.cmd "silent! tabmove +1"))
+                      :dx del-buf-keep-tab
+                      "d;" (fn [] (vim.cmd.tabnew) (vim.cmd.terminal))
                       :dd (fn [] (vim.cmd.buffer "#"))})
 
 (std.set-key-maps :n {:<C-h> vim.cmd.tabprev
