@@ -216,10 +216,10 @@
 (vim.keymap.set [:n :x :o] "," ts-repeat-move.repeat_last_move_opposite)
 
 ; make ; and , behave as they would with f, t
-(vim.keymap.set [:n :x :o] :f ts-repeat-move.builtin_f)
-(vim.keymap.set [:n :x :o] :F ts-repeat-move.builtin_F)
-(vim.keymap.set [:n :x :o] :t ts-repeat-move.builtin_t)
-(vim.keymap.set [:n :x :o] :T ts-repeat-move.builtin_T)
+(vim.keymap.set [:n :x :o] :f ts-repeat-move.builtin_f_expr {:expr true})
+(vim.keymap.set [:n :x :o] :F ts-repeat-move.builtin_F_expr {:expr true})
+(vim.keymap.set [:n :x :o] :t ts-repeat-move.builtin_t_expr {:expr true})
+(vim.keymap.set [:n :x :o] :T ts-repeat-move.builtin_T_expr {:expr true})
 
 (lean.setup {:abbreviations {:builtin true} :mappings true})
 

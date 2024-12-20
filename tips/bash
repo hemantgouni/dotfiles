@@ -10,3 +10,5 @@
   
 * To kill defunct processes: `ps -ef | grep defunct`, note the PPID, and run
   `kill <PPID>`
+
+* To kill jobs: `kill %<jobnum>`
