@@ -1,0 +1,3 @@
+- Run htop under sudo to see what processes are using the most cpu
+  - Otherwise you won't be shown the relevant process if it's run under another
+    user
