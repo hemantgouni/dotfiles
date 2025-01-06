@@ -72,7 +72,7 @@
                 });
               })
               (_: prev: { firefox = nixos-unstable-small.legacyPackages.${prev.system}.firefox; })
-              # Do we really need to wrap prev.system in ${}?
+              # Do we really need to wrap prev.system in ${}? Yes, for grouping.
               #
               # ===========
               # Here's how to add a package
